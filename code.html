@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOURCE CODE</title>
+    <style>
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>SOURCE CODE :</h3>
+
+    <pre>
+        var body = document.body;
+
+        var h1 = document.createElement("h1");
+        h1.innerText = "FAKESTOREAPI PRODUCTS IN CARDS USING DOM";
+        h1.style.textAlign = "center";
+        document.body.appendChild(h1);
+
+        var mainDiv = document.createElement("div");
+        mainDiv.style.display = 'flex';
+        mainDiv.style.flexWrap = 'wrap';
+        mainDiv.style.justifyContent = 'center';
+        mainDiv.style.gap = '20px';
+        mainDiv.style.marginTop = '20px';
+
+        for (i = 0; i < fake.length; i++) {
+
+            var card = document.createElement("div");
+
+            card.style.width = "300px";
+            card.style.border = "1px solid black"
+            card.style.borderRadius = '10px';
+            card.style.display = "flex";
+            card.style.flexDirection = "column";
+            card.style.justifyContent = "start";
+            card.style.alignItems = "center";
+            card.style.gap = "10px"
+            card.style.padding = '20px';
+
+            var img = document.createElement("img");
+            img.setAttribute("src", fake[i].image);
+
+            img.style.width = "100px";
+            img.style.height = "120px";
+
+            card.appendChild(img);
+
+            var title = document.createElement('h2');
+            title.innerText = fake[i].title;
+            title.style.fontSize = '16px';
+            title.style.textAlign = 'center';
+            card.appendChild(title);
+
+            var price = document.createElement('p');
+            price.innerText = '$' + fake[i].price;
+            price.style.fontWeight = 'bold';
+            card.appendChild(price);
+
+            var description = document.createElement("p");
+            description.innerText = fake[i].description;
+            card.appendChild(description);
+
+            var btn = document.createElement("button");
+            var A = document.createElement("a");
+            btn.appendChild(A);
+            A.setAttribute("href", "./code.html");
+            A.style.textDecoration = "none";
+            A.style.color = "white";
+            A.setAttribute("target", "_blank");
+            btn.appendChild(A)
+
+            A.innerText = 'See More';
+            btn.style.backgroundColor = '#007bff';
+            btn.style.color = 'white';
+            btn.style.border = 'none';
+            btn.style.padding = '10px 20px';
+            btn.style.cursor = 'pointer';
+            btn.style.borderRadius = '5px';
+
+            card.appendChild(btn);
+            mainDiv.appendChild(card);
+
+        }
+        body.appendChild(mainDiv);
+
+        console.log(card);
+    </pre>
+
+</body>
+
+</html>
